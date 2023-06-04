@@ -19,12 +19,12 @@ Docker is a requirement for this project to run (https://docs.docker.com/get-doc
 
 #### Installation Steps
 
-1. Clone this repository.
-2. Open your terminal and change directory to chalhoub project folder (`cd chalhoub`)
-3. Update your host file to magento2.local
-4. Run `docker-compose up -d`
-5. Open your browser and navigate to http://magento2.local
-6. Please note that 2FA authentication has been disabled for admin login
+1. Open your terminal and run `mkdir ~/chalhoub`
+2. Run `cd ~/chalhoub`
+3. Run `git clone https://github.com/purplebolt/chaloub-docker-container.git .` to clone docker git repo.
+4. Update your host file by adding magento2.local
+5. Run `docker-compose up -d`
+6. Open your browser and navigate to http://magento2.local
    ```
    admin_url : http://magento2.local/admin
    admin_username: john.smith
@@ -91,7 +91,7 @@ Docker is a requirement for this project to run (https://docs.docker.com/get-doc
     {
        listShops(
         pageSize: 1
-        filter: {identifier : {eq:"SHP-4021"}}
+        filter: {identifier : {eq:"SHP-6920"}}
       ) {
         total_count
         items {
@@ -108,7 +108,7 @@ Docker is a requirement for this project to run (https://docs.docker.com/get-doc
    ```
    mutation {
       editShop(
-       id: 2,  
+       id: 1,  
        input: {
          shop_name: "Stoic Shop"
          identifier: "SHP-4024"
@@ -131,8 +131,4 @@ Docker is a requirement for this project to run (https://docs.docker.com/get-doc
     deleteShop(id: 1)
   } 
   ```  
-   
-
-
-
-
+  
