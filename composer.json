@@ -1,5 +1,5 @@
 {
-    "name": "purplebolt/module-shopfinder",
+    "name": "purplebolt/shopfinder",
     "description": "Chalhoub Shop Finder module",
     "type": "magento2-module",
     "license": "none",
@@ -9,8 +9,9 @@
             "email": "purplescroll@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {},
+    "require": {
+    "php": ">=8.0.0"
+  },
     "autoload": {
         "files": [
             "registration.php"
