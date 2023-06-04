@@ -2,7 +2,7 @@
     "name": "purplebolt/module-shopfinder",
     "description": "Chalhoub Shop Finder module",
     "type": "magento2-module",
-    "license": "GPL-3.0",
+    "license": "none",
     "authors": [
         {
             "name": "Akinbami Yusuf",
