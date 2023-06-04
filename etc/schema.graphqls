@@ -44,20 +44,20 @@ type ShopFinder {
     shop_name: String @doc(description: "Shop Name")
     identifier: String @doc(description: "Shop unique identifier")
     country: String @doc(description: "Country where shop is located")
-    shopImage: String @doc(description: "Path to Image of Shop")
+    shop_image: String @doc(description: "Path to Image of Shop")
 }
 
 input ShopFinderInput {
     identifier: String @doc(description: "unique Identifier for each shop")
     shop_name: String @doc(description: "Name of the shop")
     country: String @doc(description: "Country where the shop is located")
-    shopImage: String @doc(description: "Image of shop")
+    shop_image: String @doc(description: "Image of shop")
 }
 
 input ShopFinderFilterInput {
     identifier: FilterTypeInput @doc(description: "")
     shop_name: FilterTypeInput @doc(description: "")
-    shopImage: FilterTypeInput @doc(description: "")
+    shop_image: FilterTypeInput @doc(description: "")
     country: FilterTypeInput @doc(description: "")
 }
 

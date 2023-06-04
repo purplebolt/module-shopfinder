@@ -112,10 +112,10 @@
 				</editor>
 			</settings>
 		</column>
-		<column name="shopImage">
+		<column name="shop_image">
 			<settings>
 				<filter>text</filter>
-				<label translate="true">shopImage</label>
+				<label translate="true">shop_image</label>
 				<editor>
 					<editorType>text</editorType>
 					<validation>

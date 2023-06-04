@@ -94,14 +94,14 @@ class UpdateShop
         if (isset($data[ShopFinderInterface::COUNTRY])) {
             $shopDataObject->setCountry($data[ShopFinderInterface::COUNTRY]);
         }
-        if (isset($data[ShopFinderInterface::SHOPIMAGE])) {
-            $shopDataObject->setImage($data[ShopFinderInterface::SHOPIMAGE]);
+        if (isset($data[ShopFinderInterface::SHOP_IMAGE])) {
+            $shopDataObject->setShopImage($data[ShopFinderInterface::SHOP_IMAGE]);
         }
         if (isset($data[ShopFinderInterface::SHOP_NAME])) {
             $shopDataObject->setIdentifier($data[ShopFinderInterface::IDENTIFIER]);
         }
         $this->_shopFinderRepository->save($shopDataObject);
-        $shopDataObject->setImage($mediaUrl.$shopDataObject->getImage());
+        $shopDataObject->setShopImage($mediaUrl.$shopDataObject->getShopImage());
         return $shopDataObject;
     }
 }

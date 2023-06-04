@@ -76,7 +76,7 @@ class DataProvider extends AbstractDataProvider
             if ($model->getShopId()) {
                 $image[0]['name'] = $model->getShopImage();
                 $image[0]['url'] = $this->getMediaDir().$model->getShopImage();
-                $this->loadedData[$model->getId()]['shopImage'] = $image;
+                $this->loadedData[$model->getId()]['shop_image'] = $image;
             }
         }
         $data = $this->_dataPersistor->get('chalhoub_shopfinder');

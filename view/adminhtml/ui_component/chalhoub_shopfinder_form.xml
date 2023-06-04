@@ -90,7 +90,7 @@
             </settings>
         </field>
 
-        <field name="shopImage">
+        <field name="shop_image">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">string</item>
@@ -109,27 +109,5 @@
                 </item>
             </argument>
         </field>
-<!--
-        <field name="shopImage" formElement="fileUploader">
-            <settings>
-                <label translate="true">Shop Image</label>
-                <notice translate="true">Allowed file types: jpg, jpeg, gif, png.</notice>
-                <componentType>fileUploader</componentType>
-            </settings>
-            <formElements>
-                <fileUploader>
-                    <settings>
-                        <dataScope>shopImage</dataScope>
-                        <maxFileSize>20480000</maxFileSize>
-                        <allowedExtensions>jpg jpeg gif png</allowedExtensions>
-                        <placeholderType>image</placeholderType>
-                        <previewTmpl>Chalhoub_ShopFinder/image_preview</previewTmpl>
-                        <uploaderConfig>
-                            <param xsi:type="string" name="url">chalhoub_shopfinder/index/upload</param>
-                        </uploaderConfig>
-                    </settings>
-                </fileUploader>
-            </formElements>
-        </field> -->
 	</fieldset>
 </form>

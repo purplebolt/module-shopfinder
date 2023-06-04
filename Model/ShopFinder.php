@@ -90,7 +90,7 @@ class ShopFinder extends AbstractModel implements ShopFinderInterface
      */
     public function getShopImage()
     {
-        return $this->getData(self::SHOPIMAGE);
+        return $this->getData(self::SHOP_IMAGE);
     }
 
     /**
@@ -98,7 +98,7 @@ class ShopFinder extends AbstractModel implements ShopFinderInterface
      */
     public function setShopImage($shopImage)
     {
-        return $this->setData(self::SHOPIMAGE, $shopImage);
+        return $this->setData(self::SHOP_IMAGE, $shopImage);
     }
 }
 

@@ -34,8 +34,8 @@ Docker is a requirement for this project to run (https://docs.docker.com/get-doc
 
 ## Install ShopFinder Module
 
-1. Run `composer config repositories.0 git https://github.com/purplebolt/module-shopfinder.git`
-2. Run `bin/composer require chalhoub/module-shopfinder`
+1. Run `bin/composer config repositories.0 vcs https://github.com/purplebolt/module-shopfinder.git`
+2. Run `bin/composer require purplebolt/shopfinder`
 3. Run deployment commands
    ```
     bin/magento setup:upgrade
@@ -43,27 +43,9 @@ Docker is a requirement for this project to run (https://docs.docker.com/get-doc
     bin/magento c:f
    ```
 
-
-\* = in production please use the `--keep-generated` option
-
-### Type 1: Zip file
-
-- Unzip the zip file in `app/code/Chalhoub`
-- Enable the module by running `php bin/magento module:enable Chalhoub_ShopFinder`
-- Apply database updates by running `php bin/magento setup:upgrade`\*
-- Flush the cache by running `php bin/magento cache:flush`
-
-### Type 2: Composer
-
-- Add the composer repository to the configuration by running `composer config repositories.repo.magento.com composer https://repo.magento.com/`
-- Install the module composer by running `composer require chalhoub/module-shopfinder`
-- enable the module by running `php bin/magento module:enable Chalhoub_ShopFinder`
-- apply database updates by running `php bin/magento setup:upgrade`\*
-- Flush the cache by running `php bin/magento cache:flush`
-
 ## Specifications
 
-## Specifications
+### GraphQL Endpoint https://magento2.local/graphql
 
 - Shop Creation
   ```
@@ -73,11 +55,11 @@ Docker is a requirement for this project to run (https://docs.docker.com/get-doc
         shop_name: "Stoic Accessories"
         identifier: "SHP-6920"
         country: "GB"
-        shopImage: "there-is-no-image-here.png"
+        shop_image: "there-is-no-image-here.png"
        }
      ) {
        shop {
-         shopImage
+         shop_image
          country
          shop_name
        }
@@ -97,7 +79,7 @@ Docker is a requirement for this project to run (https://docs.docker.com/get-doc
           shop_name
           identifier
           country
-          shopImage
+          shop_image
         }
       }
     }
@@ -116,7 +98,7 @@ Docker is a requirement for this project to run (https://docs.docker.com/get-doc
           shop_name
           identifier
           country
-          shopImage
+          shop_image
         }
       }
     }

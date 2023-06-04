@@ -58,13 +58,13 @@ class Save extends \Magento\Backend\App\Action
 
             $model->setData($data);
 
-            if (isset($data['shopImage'][0])) {
-                $model->setData('shopImage', $data['shopImage'][0]['name']);
+            if (isset($data['shop_image'][0])) {
+                $model->setData('shop_image', $data['shop_image'][0]['name']);
             } else {
                 if ($model->getId()) {
                     $this->_connection->getConnection()->update(
                         $this->_connection->getTableName('chalhoub_shopfinder'),
-                        ['shopImage'=>null],
+                        ['shop_image'=>null],
                         ['shop_id = ?' => (int) $model->getId()]
                     );
                 }

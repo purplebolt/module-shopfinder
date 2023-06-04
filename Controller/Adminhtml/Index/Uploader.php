@@ -51,7 +51,7 @@ class Uploader extends \Magento\Backend\App\Action
      */
     public function execute()
     {
-        $imageUploadId = $this->getRequest()->getParam('param_name', 'shopImage');
+        $imageUploadId = $this->getRequest()->getParam('param_name', 'shop_image');
         try {
             $imageResult = $this->imageUploader->saveFileToTmpDir($imageUploadId);
             // Upload image folder wise

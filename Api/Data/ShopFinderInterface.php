@@ -13,7 +13,7 @@ interface ShopFinderInterface
     const IDENTIFIER = 'identifier';
     const COUNTRY = 'country';
     const SHOP_ID = 'shop_id';
-    const SHOPIMAGE = 'shopImage';
+    const SHOP_IMAGE = 'shop_image';
     const SHOP_NAME = 'shop_name';
 
     /**
@@ -69,13 +69,13 @@ interface ShopFinderInterface
     public function setCountry($country);
 
     /**
-     * Get shopImage
+     * Get shop_image
      * @return string|null
      */
     public function getShopImage();
 
     /**
-     * Set shopImage
+     * Set shop_image
      * @param string $shopImage
      * @return \Chalhoub\ShopFinder\ShopFinder\Api\Data\ShopFinderInterface
      */
