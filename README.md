@@ -126,9 +126,9 @@ Docker is a requirement for this project to run (https://docs.docker.com/get-doc
 
  - Deleting a shop
   
-  ```
-  mutation {
-    deleteShop(id: 1)
-  } 
-  ```  
+   ```
+   mutation {
+     deleteShop(id: 1)
+   } 
+   ```  
   
