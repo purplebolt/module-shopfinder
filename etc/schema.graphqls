@@ -1,0 +1,65 @@
+type Mutation {
+  addShop(input: ShopFinderInput!): ShopFinderOutput
+    @resolver(
+        class: "\\Chalhoub\\ShopFinder\\Model\\Resolver\\AddShop"
+    )
+    @doc(description: "Create a new shop")
+
+  editShop(id: Int!, input: ShopFinderInput): ShopFinderOutput
+    @resolver(
+        class: "Chalhoub\\ShopFinder\\Model\\Resolver\\EditShop"
+    )
+    @doc(description: "Updates a shop")
+
+  deleteShop(id: Int!): Boolean
+    @resolver(
+        class: "Chalhoub\\ShopFinder\\Model\\Resolver\\DeleteShop"
+    )
+    @doc(description: "Deletes a Shop")
+}
+
+type Query {
+    listShops(
+        pageSize: Int = 10 @doc(description: "Size of page")
+        filter: ShopFinderFilterInput @doc(description: "This for input parameters to filter shops")
+        currentPage: Int = 1 @doc(description: "The current page. Defaults to 1")
+    ): ShopFindersOutput
+    @resolver(
+        class: "\\Chalhoub\\ShopFinder\\Model\\Resolver\\ListShops"
+    )
+    @doc(description: "Queries list of shops")
+}
+
+type ShopFinderOutput {
+  shop: ShopFinder!
+}
+
+type ShopFindersOutput {
+    items: [ShopFinder] @doc(description: "Matches found")
+    total_count: Int @doc(description: "Total records count")
+}
+
+type ShopFinder {
+    shop_id: Int @doc(description: "Shop Id")
+    shop_name: String @doc(description: "Shop Name")
+    identifier: String @doc(description: "Shop unique identifier")
+    country: String @doc(description: "Country where shop is located")
+    shopImage: String @doc(description: "Path to Image of Shop")
+}
+
+input ShopFinderInput {
+    identifier: String @doc(description: "unique Identifier for each shop")
+    shop_name: String @doc(description: "Name of the shop")
+    country: String @doc(description: "Country where the shop is located")
+    shopImage: String @doc(description: "Image of shop")
+}
+
+input ShopFinderFilterInput {
+    identifier: FilterTypeInput @doc(description: "")
+    shop_name: FilterTypeInput @doc(description: "")
+    shopImage: FilterTypeInput @doc(description: "")
+    country: FilterTypeInput @doc(description: "")
+}
+
+
+

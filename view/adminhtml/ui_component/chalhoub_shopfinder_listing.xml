@@ -1,0 +1,135 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">chalhoub_shopfinder_listing.chalhoub_shopfinder_shopfinder_listing_data_source</item>
+		</item>
+	</argument>
+	<settings>
+		<spinner>chalhoub_shopfinder_columns</spinner>
+		<deps>
+			<dep>chalhoub_shopfinder_listing.chalhoub_shopfinder_listing_data_source</dep>
+		</deps>
+		<buttons>
+			<button name="add">
+				<url path="*/*/new"/>
+				<class>primary</class>
+				<label translate="true">Add A Shop</label>
+			</button>
+		</buttons>
+	</settings>
+	<dataSource name="chalhoub_shopfinder_listing_data_source" component="Magento_Ui/js/grid/provider">
+		<settings>
+			<storageConfig>
+				<param name="indexField" xsi:type="string">shop_id</param>
+			</storageConfig>
+			<updateUrl path="mui/index/render"/>
+		</settings>
+		<aclResource>Chalhoub_ShopFinder::ShopFinder</aclResource>
+		<dataProvider name="chalhoub_shopfinder_listing_data_source" class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+			<settings>
+				<requestFieldName>id</requestFieldName>
+				<primaryFieldName>shop_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<listingToolbar name="listing_top">
+		<settings>
+			<sticky>true</sticky>
+		</settings>
+		<bookmark name="bookmarks"/>
+		<columnsControls name="columns_controls"/>
+		<filters name="listing_filters"/>
+		<paging name="listing_paging"/>
+	</listingToolbar>
+	<columns name="chalhoub_shopfinder_columns">
+		<settings>
+			<editorConfig>
+				<param name="selectProvider" xsi:type="string">chalhoub_shopfinder_listing.chalhoub_shopfinder_shopfinder_listing.chalhoub_shopfinder_shopfinder_columns.ids</param>
+				<param name="enabled" xsi:type="boolean">true</param>
+				<param name="indexField" xsi:type="string">shop_id</param>
+				<param name="clientConfig" xsi:type="array">
+					<item name="saveUrl" xsi:type="url" path="chalhoub_shopfinder/ShopFinder/inlineEdit"/>
+					<item name="validateBeforeSave" xsi:type="boolean">false</item>
+				</param>
+			</editorConfig>
+			<childDefaults>
+				<param name="fieldAction" xsi:type="array">
+					<item name="provider" xsi:type="string">chalhoub_shopfinder_listing.chalhoub_shopfinder_listing.chalhoub_shopfinder_columns_editor</item>
+					<item name="target" xsi:type="string">startEdit</item>
+					<item name="params" xsi:type="array">
+						<item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
+						<item name="1" xsi:type="boolean">true</item>
+					</item>
+				</param>
+			</childDefaults>
+		</settings>
+		<selectionsColumn name="ids">
+			<settings>
+				<indexField>shop_id</indexField>
+			</settings>
+		</selectionsColumn>
+		<column name="shop_id">
+			<settings>
+				<filter>text</filter>
+				<sorting>asc</sorting>
+				<label translate="true">ID</label>
+			</settings>
+		</column>
+		<column name="shop_name">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">shop_name</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="identifier">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">identifier</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="country">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">country</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="shopImage">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">shopImage</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+        <actionsColumn name="actions" class="Chalhoub\ShopFinder\Ui\Component\Listing\Column\ShopFinderActions">
+            <settings>
+                <indexField>shop_id</indexField>
+                <resizeEnabled>false</resizeEnabled>
+                <resizeDefaultWidth>107</resizeDefaultWidth>
+            </settings>
+        </actionsColumn>
+	</columns>
+</listing>
