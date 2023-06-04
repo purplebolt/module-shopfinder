@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/chalhoub-shopfinder/shopfinder" method="POST">
+		<service class="Chalhoub\ShopFinder\Api\ShopFinderRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Chalhoub_ShopFinder::ShopFinder_save"/>
+		</resources>
+	</route>
+	<route url="/V1/chalhoub-shopfinder/shopfinder/search" method="GET">
+		<service class="Chalhoub\ShopFinder\Api\ShopFinderRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="Chalhoub_ShopFinder::ShopFinder_view"/>
+		</resources>
+	</route>
+	<route url="/V1/chalhoub-shopfinder/shopfinder/:shopfinderId" method="GET">
+		<service class="Chalhoub\ShopFinder\Api\ShopFinderRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="Chalhoub_ShopFinder::ShopFinder_view"/>
+		</resources>
+	</route>
+	<route url="/V1/chalhoub-shopfinder/shopfinder/:shopfinderId" method="PUT">
+		<service class="Chalhoub\ShopFinder\Api\ShopFinderRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Chalhoub_ShopFinder::ShopFinder_update"/>
+		</resources>
+	</route>
+	<route url="/V1/chalhoub-shopfinder/shopfinder/:shopfinderId" method="DELETE">
+		<service class="Chalhoub\ShopFinder\Api\ShopFinderRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="Chalhoub_ShopFinder::ShopFinder_delete"/>
+		</resources>
+	</route>
+</routes>
